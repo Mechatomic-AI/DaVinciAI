@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 358 93% 26%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 358 93% 26%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 358 93% 26%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 358 93% 26%;
+    --radius: 0.75rem;
+    --primary-rgb: 114, 4, 8;
+    --secondary-rgb: 114, 4, 8;
+  }
+
+  .dark {
+    --background: 240, 6%, 10%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240, 5%, 13%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270, 2%, 19%;
+    --input: 240 3.7% 15.9%;
+    --ring: 0, 0%, 100%, 0.1;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Radial glow effect */
+.radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(114, 4, 8, 0.15), transparent 60%),
+              radial-gradient(circle at 100% 0%, rgba(114, 4, 8, 0.1), transparent 50%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* Neon box effect */
+.neon-box {
+  border: 1px solid rgba(114, 4, 8, 0.2);
+  box-shadow: 0 0 15px rgba(114, 4, 8, 0.1),
+              inset 0 0 15px rgba(114, 4, 8, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Neon text glow */
+.neon-glow {
+  text-shadow: 0 0 10px rgba(125 255 238,0.5),
+               0 0 20px rgba(125 255 238, 0.3);
+}
+
+/* Custom button styles */
+.generate-button {
+  background: rgb(114, 4, 8);
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.generate-button:hover {
+  background: rgba(114, 4, 8, 0.8);
+  box-shadow: 0 0 15px rgba(114, 4, 8, 0.5);
+}
+
+/* Header mask */
+.mask-header {
+  mask-image: linear-gradient(to top, 
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(to top, 
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Preview panel animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.preview-panel-enter {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Hide scrollbar */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
