@@ -1,5 +1,5 @@
 export function ChainString() {
-  const chainString = "SOON"
+  const chainString = "77Zzsjy3tWrm6QkudwRpkyaCHUGK8D6bFAVjfU8Fpump"
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(chainString)
